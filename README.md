@@ -90,13 +90,15 @@ crud-fractal/
         * middleware.js
 ```
 
-- `pages`: Este directorio contiene las páginas de la aplicación. En este proyecto, tenemos cinco páginas: `index.jsx` (página de inicio que muestra una lista de elementos), `login` (página para scceder a la aplicacion), `new` (página para crear un elemento ), `registro` (página para registrarse en la aplicación ) y `user` (página para ver detalles de un usuario específico, con su subcarpeta edit, para la edición de algún usuario existente).
+- `pages`: Este directorio contiene las páginas de la aplicación. En este proyecto, tenemos seis páginas: `index.jsx` (página de inicio que muestra una lista de elementos), `login` (página para scceder a la aplicacion), `new` (página para crear un elemento ), `registro` (página para registrarse en la aplicación ) y `user` (página para ver detalles de un usuario específico, con su subcarpeta edit, para la edición de algún usuario existente).
 
 - `components`: Aquí se encuentran los componentes reutilizables de la aplicación. En este caso, tenemos cuatro componentes: `Layout` que proporciona la estructura básica de la página, `Navbar` que proporciona la barra de navegación para el control de la aplicación, `userCard` que proporciona el elemento para cada uno de los usuarios de la aplicación y `userForm`, que porporciona la creación o edición de usuarios.
 
 - `api`: Este directorio contiene los archivos que definen los endpoints de la API.
 
 - `config`: Este directorio contiene el archivo de configuración para establecer las conexiónes con las base de datos.
+
+- `lib`: Este directorio contiene en su subcarpeta el archivo para el manejo de los logs.
 
 - `db`: Este directorio contiene el archivo con la estructura de las bases de datos utilizadas a lo largo del proyecto.
 
@@ -121,5 +123,9 @@ crud-fractal/
 ## Notas adicionales
 
 - Este proyecto de ejemplo utiliza una base de datos MySQL y realiza las operaciones CRUD mediante llamadas a la base de datos.
+
+- Este proyecto usa como libreria de estilos [Tailwindcss](https://tailwindcss.com/).
+
+- Este proyecto usa como libreria para los Logs [PinoJS](https://www.npmjs.com/package/pino).
 
 - Este proyecto es un desafio técnico para el proceso de selección con la empresa Fractal.
