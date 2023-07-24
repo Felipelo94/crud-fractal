@@ -8,6 +8,17 @@ export async function middleware(req) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
+  if (jwt) {
+    if (req.nextUrl.pathname.includes("/login")) {
+      try {
+        await jwtVerify(jwt, new TextEncoder().encode("secret"));
+        return NextResponse.redirect(new URL("/dashboard", req.url));
+      } catch (error) {
+        return NextResponse.next();
+      }
+    }
+  }
+
   try {
     const { payload } = await jwtVerify(
       jwt,
