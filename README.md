@@ -61,6 +61,9 @@ crud-fractal/
         * db.js
     * db
         * db.sql
+    * lib
+        * logger
+         * logger.js
     * pages
         * api
            * login
