@@ -45,32 +45,39 @@ const LoginForm = () => {
 
         <div className="flex flex-col items-start justify-center w-full">
           <div className="flex items-start justify-center flex-col w-[300px] sm:w-[500px]">
-            <label className="min-w-[300px] rounded sm:w-[500px] pl-3 mt-2">
+            <label
+              className="min-w-[300px] rounded sm:w-[500px] pl-3 mt-2"
+              htmlFor="email"
+              aria-labelledby="email"
+            >
               Correo:
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 "
+                placeholder="Ingrese su correo"
+              />
             </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-[300px] rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 sm:w-[500px]"
-              placeholder="Ingrese su correo"
-            />
           </div>
           <div className="flex items-start justify-center flex-col w-[300px] sm:w-[500px]">
-            <label className="w-[300px] rounded  pl-3 mt-2 sm:w-[500px]">
+            <label
+              className="w-[300px] rounded  pl-3 mt-2 sm:w-[500px]"
+              htmlFor="password"
+            >
               Contraseña:
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                className="w-full rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 "
+                placeholder="Ingrese su contraseña"
+              />
             </label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              className="w-[300px] rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 sm:w-[500px]"
-              placeholder="Ingrese su contraseña"
-            />
           </div>
           <button
             type="submit"

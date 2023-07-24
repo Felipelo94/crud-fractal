@@ -1,34 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CRUD con Next.js y API integrada
 
-## Getting Started
+Este es un proyecto de ejemplo que implementa un CRUD (Create, Read, Update, Delete) utilizando Next.js en el front-end y la API integrada de Next.js en el backend. El objetivo es demostrar cómo crear una aplicación web simple con funcionalidad de CRUD utilizando estas tecnologías.
 
-First, run the development server:
+## Requisitos previos
+
+Antes de comenzar, asegúrate de tener lo siguiente instalado en tu máquina:
+
+1. Node.js: Asegúrate de tener Node.js instalado. Puedes descargar la última versión estable desde el sitio web oficial: [https://nodejs.org](https://nodejs.org).
+
+2. Next.js: Debes tener Next.js instalado globalmente en tu máquina. Si no lo tienes, puedes instalarlo ejecutando el siguiente comando:
+
+```bash
+npm install -g next
+```
+
+## Instrucciones de configuración
+
+Sigue estos pasos para configurar y ejecutar el proyecto:
+
+1. Clona este repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/Felipelo94/crud-fractal.git
+cd crud-fractal
+```
+
+2. Instala las dependencias del proyecto ejecutando el siguiente comando en la raíz del proyecto:
+
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo para el front-end y la API backend:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto iniciará el servidor de desarrollo en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+4. Abre tu navegador web y navega a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Estructura del proyecto
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+El proyecto tiene la siguiente estructura de directorios:
 
-## Learn More
+```
+crud-fractal/
+<!--ul-->
+    * components
+        * Layout
+            * Layout.jsx
+        * navbar
+            * Navbar.jsx
+        * userCard
+            * UserCard.jsx
+        * userForm
+            * UserForm.jsx
+    * config
+        * db.js
+    * db
+        * db.sql
+    * pages
+        * api
+           * login
+                * index.js
+            * logout
+                *index.js
+            * register
+                * index.js
+            * users
+                * [id].js
+                * index.js
+        * login
+            * index.jsx
+        * new
+            * index.js
+        * registro
+            * index.js
+        * user
+            * edit
+                * [id].js
+            * [id].js
+        * _app.jsx
+        * index.jsx
+        * middleware.js
+```
 
-To learn more about Next.js, take a look at the following resources:
+- `pages`: Este directorio contiene las páginas de la aplicación. En este proyecto, tenemos cinco páginas: `index.jsx` (página de inicio que muestra una lista de elementos), `login` (página para scceder a la aplicacion), `new` (página para crear un elemento ), `registro` (página para registrarse en la aplicación ) y `user` (página para ver detalles de un usuario específico, con su subcarpeta edit, para la edición de algún usuario existente).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `components`: Aquí se encuentran los componentes reutilizables de la aplicación. En este caso, tenemos cuatro componentes: `Layout` que proporciona la estructura básica de la página, `Navbar` que proporciona la barra de navegación para el control de la aplicación, `userCard` que proporciona el elemento para cada uno de los usuarios de la aplicación y `userForm`, que porporciona la creación o edición de usuarios.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `api`: Este directorio contiene los archivos que definen los endpoints de la API.
 
-## Deploy on Vercel
+- `config`: Este directorio contiene el archivo de configuración para establecer las conexiónes con las base de datos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `db`: Este directorio contiene el archivo con la estructura de las bases de datos utilizadas a lo largo del proyecto.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Funcionalidad de la aplicación
+
+- La aplicación inicia con una página de inicio de sesión, con la opción de crear una cuenta nueva en el caso de no poseerla.
+
+- Al iniciar sesión se redirige al Home.
+
+- En la página de inicio (`index.js`), se muestra una lista de elementos existentes con la opción de entrar a la pagina de detalles de cada usuario, y tambien se encuentra la barra de navegación.
+
+- Al hacer click en el logo de la aplicación, nos redirege al home.
+
+- Al hacer clic en el botón "Usuario nuevo", se dirige a la página de creación (`new`) donde se puede agregar un nuevo usuario.
+
+- Al hacer clic en el botón "Editar" en la página de detalles de usuario, se redirige a la página de edición (`edit`) donde se pueden realizar cambios en el usuario seleccionado.
+
+- Al hacer clic en el botón "Eliminar" en la página de indetalles de usuario, se eliminará el elemento correspondiente de la lista.
+
+- Al hacer clic en el botón de "Cerrar sesión" de la barra de navegación, nos redirige a la página de iniciar sesión de la aplicación, borrando el toquen y no permite el uso del resto de la aplicación.
+
+## Notas adicionales
+
+- Este proyecto de ejemplo utiliza una base de datos MySQL y realiza las operaciones CRUD mediante llamadas a la base de datos.
+
+- Este proyecto es un desafio técnico para el proceso de selección con la empresa Fractal.

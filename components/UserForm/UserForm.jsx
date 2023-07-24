@@ -55,45 +55,47 @@ const UserForm = () => {
         <p>Ingrese los datos del nuevo usuario</p>
         <div className="flex flex-col items-start justify-start w-full">
           <div className="flex items-start justify-center flex-col w-[200px] sm:w-[500px] ">
-            <label className="w-[300px] rounded  pl-3 mt-2 ">Nombre:</label>
-            <input
-              type="text"
-              name="firstName"
-              onChange={handleChange}
-              required
-              className="w-[300px] rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 sm:w-[500px]"
-              placeholder="Ingrese el nombre"
-              value={user.firstName}
-            />
+            <label className="w-[300px] rounded  pl-3 mt-2 sm:w-[500px]">
+              Nombre:
+              <input
+                type="text"
+                name="firstName"
+                onChange={handleChange}
+                required
+                className="w-full rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 "
+                placeholder="Ingrese el nombre"
+                value={user.firstName}
+              />
+            </label>
           </div>
           <div className="flex items-start justify-center flex-col w-[200px] sm:w-[500px]">
             <label className="w-[300px] rounded  pl-3 mt-2 sm:w-[500px]">
               Apellido:
+              <input
+                type="text"
+                name="lastName"
+                onChange={handleChange}
+                required
+                className="w-full rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 "
+                placeholder="Ingrese el apellido"
+                value={user.lastName}
+              />
             </label>
-            <input
-              type="text"
-              name="lastName"
-              onChange={handleChange}
-              required
-              className="w-[300px] rounded h-8 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 sm:w-[500px]"
-              placeholder="Ingrese el apellido"
-              value={user.lastName}
-            />
           </div>
           <div className="flex items-start justify-center flex-col w-[200px] sm:w-[500px]">
             <label className="w-[300px] rounded  pl-3 mt-2 sm:w-[500px]">
               Descripción del cargo:
+              <textarea
+                type="text"
+                name="positionDesc"
+                onChange={handleChange}
+                required
+                className="w-full rounded h-20 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 "
+                placeholder="Ingrese la descripción del cargo"
+                rows="10"
+                value={user.positionDesc}
+              />
             </label>
-            <textarea
-              type="text"
-              name="positionDesc"
-              onChange={handleChange}
-              required
-              className="w-[300px] rounded h-20 pl-3 mt-2 bg-slate-100 hover:bg-gray-200 sm:w-[500px]"
-              placeholder="Ingrese la descripción del cargo"
-              rows="10"
-              value={user.positionDesc}
-            />
           </div>
           <button
             type="submit"
