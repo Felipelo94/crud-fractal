@@ -24,7 +24,7 @@ export async function middleware(req) {
       jwt,
       new TextEncoder().encode("secret")
     );
-    console.log({ payload });
+
     return NextResponse.next();
   } catch (error) {
     return NextResponse.redirect(new URL("/login", req.url));

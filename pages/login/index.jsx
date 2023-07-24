@@ -21,13 +21,13 @@ const LoginForm = () => {
 
     try {
       await axios.post("/api/login", formData);
-      console.log("Heloooooooooooooooooooooo");
+
       setLoading(false);
       router.push("/");
     } catch (error) {
       setLoading(false);
       setError("Ingreso fallido. Revisa tus credenciales.");
-      console.error(error);
+
       setFormData({ ...formData, password: "" });
     }
   };

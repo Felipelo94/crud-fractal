@@ -34,9 +34,7 @@ const UserForm = () => {
         ? await axios.put(`/api/users/${router.query.id}`, user)
         : await axios.post("/api/users", user);
       router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const handleChange = (e) => {

@@ -55,7 +55,6 @@ const updateUser = async (req, res) => {
     });
     return res.status(204).json({});
   } catch (error) {
-    console.log(error.message);
     logger.info({
       userIp: req.headers["x-forwarded-for"],
       action: "Get user with id",

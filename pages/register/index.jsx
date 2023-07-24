@@ -25,7 +25,7 @@ const RegisterForm = () => {
       router.push("/login");
     } catch (error) {
       setLoading(false);
-      setError("Registration failed. Please try again.");
+      setError("Falló el registro. Por favor intente de nuevo.");
       console.error(error);
     }
   };
@@ -36,6 +36,11 @@ const RegisterForm = () => {
         onSubmit={handleSubmit}
         className="flex items-center justify-center flex-col bg-white p-8 rounded-2xl"
       >
+        {error && (
+          <p className="text-2xl text-red-500 w-[300px] md:w-[500px] text-center mb-4">
+            {error}
+          </p>
+        )}
         <h1 className="text-6xl font-mono text-gray-500 mb-4">CrudApp</h1>
 
         <h2 className="text-2xl font-mono mb-3 ">Registro</h2>
@@ -79,8 +84,6 @@ const RegisterForm = () => {
             Inicia sesión
           </Link>
         </p>
-
-        {error && <p>{error}</p>}
       </form>
     </div>
   );
