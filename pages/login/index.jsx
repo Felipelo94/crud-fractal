@@ -21,12 +21,14 @@ const LoginForm = () => {
 
     try {
       await axios.post("/api/login", formData);
+      console.log("Heloooooooooooooooooooooo");
       setLoading(false);
       router.push("/");
     } catch (error) {
       setLoading(false);
-      setError("Login failed. Please check your credentials.");
+      setError("Ingreso fallido. Revisa tus credenciales.");
       console.error(error);
+      setFormData({ ...formData, password: "" });
     }
   };
 
@@ -36,6 +38,11 @@ const LoginForm = () => {
         onSubmit={handleSubmit}
         className="flex items-center justify-center flex-col bg-white p-8 rounded-2xl"
       >
+        {error && (
+          <p className="text-2xl text-red-500 w-[300px] md:w-[500px] text-center mb-4">
+            {error}
+          </p>
+        )}
         <h1 className="text-6xl font-mono text-gray-500 mb-4">CrudApp</h1>
 
         <h2 className="text-2xl font-mono mb-3 w-[200px]">Iniciar sesión</h2>
