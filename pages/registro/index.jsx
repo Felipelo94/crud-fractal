@@ -75,7 +75,7 @@ const RegisterForm = () => {
 
         <p className="flex p-0 m-0 mt-6">
           ¿Ya tienes una cuenta?
-          <Link href="/registro" className="text-blue-500 ml-1">
+          <Link href="/login" className="text-blue-500 ml-1">
             Inicia sesión
           </Link>
         </p>
@@ -83,32 +83,6 @@ const RegisterForm = () => {
         {error && <p>{error}</p>}
       </form>
     </div>
-    // <form onSubmit={handleSubmit}>
-    //   <div>
-    //     <label>Email:</label>
-    //     <input
-    //       type="email"
-    //       name="email"
-    //       value={formData.email}
-    //       onChange={handleChange}
-    //       required
-    //     />
-    //   </div>
-    //   <div>
-    //     <label>Password:</label>
-    //     <input
-    //       type="password"
-    //       name="password"
-    //       value={formData.password}
-    //       onChange={handleChange}
-    //       required
-    //     />
-    //   </div>
-    //   <button type="submit" disabled={loading}>
-    //     Register
-    //   </button>
-    //   {error && <p>{error}</p>}
-    // </form>
   );
 };
 

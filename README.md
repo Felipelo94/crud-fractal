@@ -47,7 +47,7 @@ El proyecto tiene la siguiente estructura de directorios:
 
 ```
 crud-fractal/
-<!--ul-->
+
     * components
         * Layout
             * Layout.jsx
